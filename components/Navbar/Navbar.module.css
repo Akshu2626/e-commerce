@@ -1,0 +1,150 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 70px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav_links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_links a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav_links li:hover {
+  color: #ff5722;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  width: 250px;
+}
+
+.search_bar input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+.cart {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart_item_qty {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #ff5722;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.navbar_smallscreen {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav_links {
+    display: none;
+  }
+
+  .search_bar {
+    display: none;
+  }
+
+  .navbar_smallscreen {
+    display: flex;
+  }
+
+  .navbar_smallscreen_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .navbar_smallscreen_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .navbar_smallscreen_links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .close_icon {
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  .cart_small_screen {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .cart_item_qty {
+    top: -4px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+
+  .navbar_smallscreen_links a {
+    font-size: 1rem;
+  }
+}

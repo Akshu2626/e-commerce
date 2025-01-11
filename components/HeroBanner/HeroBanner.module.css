@@ -1,0 +1,144 @@
+/* HeroBanner.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  background-color: #f5f5f5; /* Light grey background */
+  gap: 2rem;
+}
+
+.header_left_side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.header_content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333; /* Dark grey text */
+  margin: 0;
+}
+
+.header_content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #555; /* Medium grey text */
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #333; /* Dark button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555; /* Medium grey on hover */
+}
+
+.header_featured {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allows wrapping for small screens */
+}
+
+.header_right_side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_circle {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, #f0f0f0, #e0e0e0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Styles */
+
+/* For Tablets and Medium Screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .header_left_side {
+    text-align: center;
+    align-items: center;
+  }
+
+  .header_content h1 {
+    font-size: 2.5rem;
+  }
+
+  .header_content p {
+    font-size: 1rem;
+  }
+
+  .header_featured {
+    justify-content: center;
+  }
+
+  .header_circle {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* For Mobile and Small Screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header_content h1 {
+    font-size: 2rem;
+  }
+
+  .header_content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .header_featured {
+    gap: 1rem;
+  }
+
+  .header_circle {
+    width: 300px;
+    height: 300px;
+  }
+}
