@@ -7,6 +7,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const Home = ({ products }) => {
+  if (!products || products.length === 0) {
+    return <div>No products available</div>;
+  }
+
   return (
     <>
       <HeroBanner />
@@ -17,17 +21,14 @@ const Home = ({ products }) => {
         </div>
         <Swiper
           breakpoints={{
-            // width >= 300
             300: {
               slidesPerView: 1,
               spaceBetween: 20,
             },
-            // width >= 1000
             1000: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
-            // width >= 1260
             1260: {
               slidesPerView: 3,
               spaceBetween: 40,
@@ -36,13 +37,11 @@ const Home = ({ products }) => {
           modules={[Navigation, A11y]}
           navigation
         >
-          <div className="products-container">
-            {products?.map((product) => (
-              <SwiperSlide key={product._id}>
-                <Product product={product} />
-              </SwiperSlide>
-            ))}
-          </div>
+          {products.map((product, id) => (
+            <SwiperSlide key={id}>
+              <Product product={product} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
@@ -51,7 +50,7 @@ const Home = ({ products }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const response = await fetch('https://fakestoreapi.com/products');
     const products = await response.json();
@@ -62,7 +61,7 @@ export const getServerSideProps = async () => {
   } catch (error) {
     console.error('Error fetching products:', error);
     return {
-      props: { products: [] },
+      props: { products: [] }, // Return an empty array if the fetch fails
     };
   }
 };

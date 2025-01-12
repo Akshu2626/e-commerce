@@ -14,12 +14,10 @@ const Products = ({ products }) => {
   );
 };
 
-// Fetching data from Fake Store API on the server side
 export const getServerSideProps = async () => {
   try {
     const res = await fetch('https://fakestoreapi.com/products');
     
-    // Check if the response is okay (status 200-299)
     if (!res.ok) {
       throw new Error(`Failed to fetch products. Status: ${res.status}`);
     }
@@ -33,7 +31,7 @@ export const getServerSideProps = async () => {
     console.error('Error fetching products:', error);
 
     return {
-      props: { products: [] }, // Return an empty array as fallback
+      props: { products: [] },
     };
   }
 };

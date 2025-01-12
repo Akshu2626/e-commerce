@@ -1,15 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { urlFor } from "../../lib/client";
 import styles from "./Allproducts.module.css";
 
 const Allproducts = ({ allproducts }) => {
-  const { category, description, id, image, price, title } = allproducts || {};
-  console.log(allproducts);
+  const { id, image, price, title } = allproducts || {};
 
   return (
-    <div className={styles.productCard}>
-      <Link href={`/product/${id}`}>
+    <div className={styles.productCard} key={id}>
+      <Link href={{ pathname: "/product", params: { id: id } }}>
         <div>
           <img
             src={image}

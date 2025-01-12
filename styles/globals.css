@@ -562,7 +562,7 @@ nav li, footer li, .size li, button, .cart, .navbar-smallscreen_links {
 }
 .features-section .title {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 0 8rem 2rem;
   background: linear-gradient(180deg, white 50%, #FBFCFF 50%);
 }

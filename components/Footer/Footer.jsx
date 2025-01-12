@@ -1,15 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
-import logo from '../../src/assets/Logo.png';
-import { GrFacebookOption, GrTwitter, GrLinkedinOption } from 'react-icons/gr';
-import styles from './Footer.module.css';
+import React from "react";
+import logo from "../../src/assets/Logo.png";
+import { GrFacebookOption, GrTwitter, GrLinkedinOption } from "react-icons/gr";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer>
       <div className={styles.footer}>
         <div className={styles.logo}>
-          <Image src={logo} width={50} alt="logo" />
+          <img src={logo} width={50} alt="logo" />
           <p>
             Small, artisan label that offers a thoughtfully curated collection
             of high quality everyday essentials made.

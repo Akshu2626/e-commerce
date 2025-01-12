@@ -13,12 +13,12 @@ const ProductDetails = ({ product }) => {
             <div className="product-detail-container">
                 <div className="product-images">
                     <div className="small-images-container">
-                        {/* Only one image for now from the API */}
+
                         <img
                             src={image}
                             className="small-image"
                             alt={title}
-                            onMouseEnter={() => setIndex(0)} // Only one image to show on hover
+                            onMouseEnter={() => setIndex(0)}
                         />
                     </div>
                     <div className="big-image-container">
@@ -72,23 +72,25 @@ const ProductDetails = ({ product }) => {
 
 export default ProductDetails;
 
-export const getStaticProps = async ({ params: { id } }) => {
+export const getStaticProps = async ({ params }) => {
+    const { id } = params;
+    console.log(id);
+
+
     try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
         const product = await response.json();
-
         return {
             props: { product },
         };
     } catch (error) {
         console.error('Error fetching product details:', error);
         return {
-            notFound: true, // Return 404 if the product is not found
+            notFound: true,
         };
     }
 };
 
-// Generate paths for products
 export const getStaticPaths = async () => {
     try {
         const response = await fetch('https://fakestoreapi.com/products');
