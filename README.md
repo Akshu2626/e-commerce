@@ -91,7 +91,7 @@ The development of this project can be continued by adding a search filter funct
 A HUGE Thanks to Javascript Mastery youtube channel which really helps me in learning about web development. I recommend this channel to everyone who wants to learn about web development and javascript
 
 ## Author
-Github - [Shabrina Putri](https://github.com/Akshu2626)
+Github - [Akshu Gajbhiye](https://github.com/Akshu2626)
 
 ## 🤸 Getting Started
 
